@@ -8,9 +8,23 @@
     text-align: center
 }
 
+.holiday {
+    color: #e75050;
+}
+
 .calendar {
     text-align: right;
 }
+
+.calendar table, td, th {
+    border-bottom: 1px solid #e0e24e;
+}
+
+.calendar table {
+    border-collapse: collapse;
+}
+
+
 
 /* フッターのスタイル */
 
