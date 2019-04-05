@@ -1,0 +1,16 @@
+/* ヘッダのスタイル */
+.title-head {
+    text-align: center;
+}
+
+/* カレンダー表示部分に関するスタイル */
+.month {
+    text-align: center
+}
+
+.calendar {
+    text-align: right;
+}
+
+/* フッターのスタイル */
+
