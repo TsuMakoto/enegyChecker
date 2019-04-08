@@ -8,8 +8,12 @@
     text-align: center
 }
 
-.holiday {
+.sunday {
     color: #e75050;
+}
+
+.saturday {
+    color: #53abbb;
 }
 
 .calendar {
