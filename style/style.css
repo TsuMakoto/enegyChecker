@@ -5,15 +5,35 @@
 
 /* カレンダー表示部分に関するスタイル */
 .month {
-    text-align: center
+    text-align: center;
 }
 
-.sunday {
+.holiday {
     color: #e75050;
 }
 
 .saturday {
     color: #53abbb;
+}
+
+.prev-month {
+    color: #a0a0a0;
+}
+
+.next-month {
+    color: #a0a0a0;
+}
+/*
+.switch-btn {
+    float: left;
+}
+*/
+.prev-btn {
+    cursor: pointer;
+}
+
+.next-btn {
+    cursor: pointer;
 }
 
 .calendar {

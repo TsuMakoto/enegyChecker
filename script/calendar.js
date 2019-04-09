@@ -8,7 +8,7 @@ $(window).on('load', function() {
     showCalendar(currMonth.getFullYear(), currMonth.getMonth() + 1);
 });
 
-/** 
+/**
  * 一ヶ月分のカレンダーを表示
  * @param {number} year 年の数字
  * @param {number} month 月の数字
@@ -16,7 +16,6 @@ $(window).on('load', function() {
 function showCalendar(year, month) {
     // １日を取得
     const startDateInfo = new Date(year, month - 1, 1);
-    const startDate = startDateInfo.getDate();
     // １日の曜日を数値で取得
     const startWeek = startDateInfo.getDay();
     // 前の月も含め、日曜日の日付を取得
@@ -28,7 +27,7 @@ function showCalendar(year, month) {
     const weekCount = (endDate - (DAY_COUNT - startWeek)) / DAY_COUNT + 1;
     var $calendar = $('.calendar tbody');
     for (var i = 0; i < weekCount; i++) {
-        var week = createWeek(firstWeekInfo);
+        var week = createWeek(firstWeekInfo, month);
         $calendar.append(week);
         firstWeekInfo.setDate(firstWeekInfo.getDate() + DAY_COUNT);
     }
@@ -37,18 +36,27 @@ function showCalendar(year, month) {
 /** 
  * 日曜日から１週間分のデータを作成
  * @param {Date} startDate 日曜日の日付
+ * @param {number} currMonth 現在の月
  *
  * @return {JQuery} １週間分のテーブルデータ
  * */
-function createWeek(startDate) {
+function createWeek(startDate, currMonth) {
     var week = $('<tr></tr>');
     for (var i = 0; i < DAY_COUNT; i++) {
         const dateInfo = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
         dateInfo.setDate(dateInfo.getDate() + i);
         var dateData = $(`<td>${dateInfo.getDate()}</td>`);
-        if (dateInfo.getDay() === 0) {
-            dateData.attr('class', 'sunday');
+        if (dateInfo.getMonth() + 1 < currMonth) {
+            // 月が前の月ならprevMonthを付与
+            dateData.attr('class', 'prev-month');
+        } else if (dateInfo.getMonth() + 1 > currMonth) {
+            // 月が次の月ならnextMonthを付与
+            dateData.attr('class', 'next-month');
+        } else if (isHoliday(dateInfo)) {
+            // 休日ならholidayを付与
+            dateData.attr('class', 'holiday');
         } else if (dateInfo.getDay() === DAY_COUNT - 1) {
+            // 土曜ならsaturdayを付与
             dateData.attr('class', 'saturday');
         }
         week.append(dateData);
@@ -64,11 +72,37 @@ function createWeek(startDate) {
  *                コンバートできなければ、現在の日付
  * */
 function getCurrMonth(currMonth) {
-    var currMonth = new Date(currMonth);
+    var currMonthInfo = new Date(currMonth);
     
-    if (currMonth !== undefined) {
-        return currMonth;
+    if (currMonthInfo !== undefined) {
+        return currMonthInfo;
     } else {
         return new Date();
+    }
+}
+
+/** 
+ * 年月の設定し直し
+ * @param {number} year 年
+ * @param {number} manth 月
+ * */
+function setCurrMonth(year, month) {
+    $('.curr-month').text(`${year} / ${month}`);
+}
+
+
+/** 
+ * 休日判定処理
+ * @param {Date} targetDate 判定対象の日付
+ *
+ * @return 休日ならtrue (ただし、土曜はのぞく) : false
+ *
+ * */
+function isHoliday(targetDate) {
+    if (targetDate.getDay() === 0) {
+        return true;
+    } else {
+        // TODO: 祝日の判定を記述
+        return false;
     }
 }
