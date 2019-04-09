@@ -20,7 +20,7 @@ $(function() {
     /** 
      * 前月に戻るボタンが押された時のイベント
      * */
-    $('.prev-btn').click(function () {
+    $('#switch-prev-btn').click(function () {
         // 現在の日付を取得
         var currMonthInfo = $('.curr-month').text();
         var currMonth = getCurrMonth(currMonthInfo);
@@ -39,7 +39,7 @@ $(function() {
     /** 
      * 次月に進むボタンが押された時のイベント
      * */
-    $('.next-btn').click(function () {
+    $('#switch-next-btn').click(function () {
         // 現在の日付を取得
         var currMonthInfo = $('.curr-month').text();
         var currMonth = getCurrMonth(currMonthInfo);

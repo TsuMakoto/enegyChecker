@@ -1,0 +1,5 @@
+/* カレンダーがホバーされた時のスタイル */
+.hover-date {
+    background-color: #eff3f9;
+    opacity: 0.8;
+}

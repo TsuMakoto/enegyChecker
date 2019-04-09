@@ -6,11 +6,13 @@
         <title>やる気チェッカー</title>
         <!-- スタイルの読み込み -->
         <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/eventStyle.css">
 
         <!-- script読み込み -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="script/calendar.js"></script>
         <script src="script/switchMonth.js"></script>
+        <script src="script/niconicoFunc.js"></script>
     </head>
 
     <body>
@@ -22,9 +24,9 @@
         <div class="main">
             <!-- 月の切り替え機能 -->
             <div class="month">
-                <span class="prev-btn switch-btn">◀︎</span>
+                <span id="switch-prev-btn" class="prev-btn switch-btn">◀︎</span>
                 <span class="curr-month">2019 / 4</span>
-                <span class="next-btn switch-btn">▶︎</span> 
+                <span id="switch-next-btn"class="next-btn switch-btn">▶︎</span> 
             </div>
 
             <!-- ニコニコ機能 月のカレンダー表示部 -->
@@ -32,7 +34,7 @@
                 <table align="center">
                     <tbody>
                         <tr>
-                            <td class="sunday">Sun</td>
+                            <td class="holiday">Sun</td>
                             <td>Mon</td>
                             <td>Tue</td>
                             <td>Wed</td>
