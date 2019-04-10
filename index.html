@@ -7,6 +7,7 @@
         <!-- スタイルの読み込み -->
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="style/eventStyle.css">
+        <link rel="stylesheet" href="style/niconicoFunc.css">
 
         <!-- script読み込み -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -46,7 +47,31 @@
                 </table>
             </div>
         </div>
-
+        
+        <!-- ニコニコ機能 サイドカラムで表示 -->
+        <div class="niconico">
+            <div id="nico-condition">
+                <div class="nico-icons">
+                    <img src="img/0.png">
+                    <img src="img/1.png">
+                    <img src="img/2.png">
+                    <img src="img/3.png">
+                    <img src="img/4.png">
+                </div>
+                <div>
+                    <div class="side-title">意気込みは？</div>
+                    <textarea id="day-comment"></textarea>
+                </div>
+                <div>
+                    <div class="side-title">今日の反省</div>
+                    <textarea id="reflection"></textarea>
+                </div>
+                <div id="decision">
+                    <div id="registed">保存する</div>
+                </div>
+            </div>
+        </div>
+        
         <!-- フッター作成 -->
         <footer>
         </footer>

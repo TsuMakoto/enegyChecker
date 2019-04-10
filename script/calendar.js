@@ -31,6 +31,8 @@ function showCalendar(year, month) {
         $calendar.append(week);
         firstWeekInfo.setDate(firstWeekInfo.getDate() + DAY_COUNT);
     }
+    setCurrMonth(year, month);
+
 }
 
 /** 
@@ -83,6 +85,7 @@ function getCurrMonth(currMonth) {
 
 /** 
  * 年月の設定し直し
+ * yyyy / mm形式で登録
  * @param {number} year 年
  * @param {number} manth 月
  * */

@@ -3,3 +3,16 @@
     background-color: #eff3f9;
     opacity: 0.8;
 }
+
+.selected-date {
+    background-color: #eff3f9;
+}
+
+/* ニコニコアイコンが選択されたときに付与するクラス */
+.selected-icon {
+    background-color: ##eff3f9;
+    opacity: 0.8;
+
+}
+
+

@@ -1,9 +1,17 @@
-/* ヘッダのスタイル */
+* ヘッダのスタイル */
 .title-head {
     text-align: center;
 }
 
 /* カレンダー表示部分に関するスタイル */
+.main {
+    display: inline-block;
+    float: left;
+    margin-left: 25%;
+    font-size: 30px;
+}
+
+
 .month {
     text-align: center;
 }
@@ -23,11 +31,7 @@
 .next-month {
     color: #a0a0a0;
 }
-/*
-.switch-btn {
-    float: left;
-}
-*/
+
 .prev-btn {
     cursor: pointer;
 }

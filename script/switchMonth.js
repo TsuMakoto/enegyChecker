@@ -12,7 +12,6 @@ function changedMonth(year, month) {
         // 一つ目の要素は曜日が書いてあるため削除しない
         calendarTable.eq(i).remove();
     }
-    setCurrMonth(year, month);
     showCalendar(year, month);
 }
 

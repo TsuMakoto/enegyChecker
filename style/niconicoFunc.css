@@ -1,0 +1,24 @@
+/** 
+ * ニコニコ機能のスタイルを定義
+ * */
+
+.niconico {
+   position: fixed;
+   height: 500px;
+   width: 30%;
+   border-left: 2px solid #000;
+   right: 0px;
+   background-color: #1cdfed;
+   opacity: 0.5;
+}
+
+.nico-icons {
+    position: inline;
+    display: flex;
+}
+
+.nico-icons img {
+    height: 30px;
+    float: left;
+    margin: 20px 10px;
+}
