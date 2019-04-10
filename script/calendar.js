@@ -68,13 +68,15 @@ function createWeek(startDate, currMonth) {
 }
 
 /** 
- * @param {string} currMonth 現在の月
+ * @param {string} currMonth (year / month) 現在の月
  *
  * @return {Date} currMonthをDate型にコンバートした値 
  *                コンバートできなければ、現在の日付
  * */
 function getCurrMonth(currMonth) {
-    var currMonthInfo = new Date(currMonth);
+    // 年と月を配列へ変更
+    var arrYAndM = currMonth.split(' / ');
+    var currMonthInfo = new Date(Number(arrYAndM[0]), Number(arrYAndM[1] - 1));
     
     if (currMonthInfo !== undefined) {
         return currMonthInfo;
