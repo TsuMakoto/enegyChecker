@@ -7,7 +7,7 @@
    height: 500px;
    width: 30%;
    border-left: 2px solid #000;
-   right: 0px;
+   right: 20px;
    background-color: #1cdfed;
    opacity: 0.5;
 }
@@ -18,7 +18,17 @@
 }
 
 .nico-icons img {
-    height: 30px;
+    height: 50px;
     float: left;
     margin: 20px 10px;
+    cursor: pointer;
+}
+
+.nico-registed-btn {
+    cursor: pointer;
+    background-color: #a0a0a0;
+    border-bottom: solid 3px #ccc9c9;
+    border-right: solid 2px #ccc9c9;
+    width: 80px;
+    text-align: center;
 }
