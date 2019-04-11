@@ -43,7 +43,7 @@ $(document).on('click', '.calendar td', function() {
         // 選択された日付にクラスを付与
         $(this).addClass('selected-date');
 
-        // TODO: NICONICO_DATAから現在の状態を取得し
+        // _niconicoDataから現在の状態を取得し
         // previewNicoFuncで現在の状態をサイドバーに反映
         previewNicoFunc($(this).text());
     }
@@ -83,6 +83,9 @@ $(document).on('click', '#registed', function() {
                 .css('background-image',  'url("' + $('.selected-icon').attr('src') + '")');
         }
         
+        // 保存確認ダイアログを出す
+        $('.registed-dialog').fadeIn(1000);
+        $('.registed-dialog').fadeOut(1000);
     }
 
     
