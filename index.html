@@ -11,9 +11,9 @@
 
         <!-- script読み込み -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="script/niconicoFunc.js"></script>
         <script src="script/calendar.js"></script>
         <script src="script/switchMonth.js"></script>
-        <script src="script/niconicoFunc.js"></script>
     </head>
 
     <body>
@@ -35,13 +35,13 @@
                 <table align="center">
                     <tbody>
                         <tr>
-                            <td class="holiday">Sun</td>
-                            <td>Mon</td>
-                            <td>Tue</td>
-                            <td>Wed</td>
-                            <td>Thu</td>
-                            <td>Fri</td>
-                            <td class="saturday">Sat</td>
+                            <td class="day-area holiday">Sun</td>
+                            <td class="day-area">Mon</td>
+                            <td class="day-area">Tue</td>
+                            <td class="day-area">Wed</td>
+                            <td class="day-area">Thu</td>
+                            <td class="day-area">Fri</td>
+                            <td class="day-area saturday">Sat</td>
                         </tr>
                     </tbody>
                 </table>
@@ -59,13 +59,13 @@
                     <img src="img/3.png">
                     <img src="img/4.png">
                 </div>
-                <div>
+                <div class="nico-item">
                     <div class="side-title">意気込みは？</div>
-                    <textarea id="day-comment"></textarea>
+                    <textarea id="day-comment" class="comment-area"></textarea>
                 </div>
-                <div>
+                <div class="nico-item">
                     <div class="side-title">今日の反省</div>
-                    <textarea id="reflection"></textarea>
+                    <textarea id="reflection" class="comment-area"></textarea>
                 </div>
                 <div id="decision">
                     <div id="registed" class="nico-registed-btn">保存する</div>
@@ -73,6 +73,9 @@
             </div>
         </div>
         
+        <div class="registed-dialog">
+            <span class="registed-message">登録完了</span>
+        </div>
         <!-- フッター作成 -->
         <footer>
         </footer>

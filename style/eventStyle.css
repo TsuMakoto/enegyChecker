@@ -11,6 +11,8 @@
 /* ニコニコアイコンが選択されたときに付与するクラス */
 .selected-icon {
     background-color: #fff;
+    border-radius: 40px;
+    padding: 10px;
 }
 
 

@@ -1,3 +1,5 @@
+/* global clearData */
+
 // １週間
 const DAY_COUNT = 7;
 // const NUM_TO_WEEK = {""};
@@ -32,7 +34,7 @@ function showCalendar(year, month) {
         firstWeekInfo.setDate(firstWeekInfo.getDate() + DAY_COUNT);
     }
     setCurrMonth(year, month);
-
+    clearData();
 }
 
 /** 

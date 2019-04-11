@@ -8,8 +8,9 @@
    width: 30%;
    border-left: 2px solid #000;
    right: 20px;
-   background-color: #1cdfed;
+   background-color: #9eceff;;
    opacity: 0.5;
+   padding: 10px;
 }
 
 .nico-icons {
@@ -24,11 +25,43 @@
     cursor: pointer;
 }
 
+.nico-item {
+    margin-bottom: 10px;
+}
+
+.comment-area {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+}
+
 .nico-registed-btn {
-    cursor: pointer;
+    padding: 15px 40px;
     background-color: #a0a0a0;
-    border-bottom: solid 3px #ccc9c9;
-    border-right: solid 2px #ccc9c9;
+    cursor: pointer;
+    box-shadow: 0px 7px #ccc9c9;   
     width: 80px;
     text-align: center;
 }
+
+.nico-registed-btn:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+}
+
+.registed-dialog {
+    background-color: #a0a0a0;
+   display: none;
+    opacity: 0.5;
+    height: 100%;
+    width: 100% 
+}
+
+.registed-message {
+   width: 100%;
+   font-size: 20px;
+   background-color: #242a30; 
+}
+
+

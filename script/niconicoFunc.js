@@ -16,10 +16,14 @@ var _niconicoData= {};
  * */
 $(document).on({
     'mouseenter' : function () {
-        $(this).addClass('hover-date');
+        if (!$(this).hasClass('day-area')) {
+            $(this).addClass('hover-date');
+        }
     },
     'mouseleave' : function () {
-        $(this).removeClass('hover-date');
+        if (!$(this).hasClass('day-area')) {
+            $(this).removeClass('hover-date');
+        }
     }
 }, '.calendar td');
 
@@ -27,17 +31,22 @@ $(document).on({
  * 日付がクリックされた時のイベント
  * ニコニコ機能({@link #niconicoFunc})を呼びだし、カレンダーに
  * iconを表示する。
+ * ただし、前月、次月が選択された時は何もしない
  *
  * */
 $(document).on('click', '.calendar td', function() {
-    // 現在選択されている日付を解除
-    $('.selected-date').removeClass('selected-date');
-    // 選択された日付にクラスを付与
-    $(this).addClass('selected-date');
+    if (!$(this).hasClass('prev-month') 
+        && !$(this).hasClass('next-month') 
+        && !$(this).hasClass('day-area')) {
+        // 現在選択されている日付を解除
+        $('.selected-date').removeClass('selected-date');
+        // 選択された日付にクラスを付与
+        $(this).addClass('selected-date');
 
-    // TODO: NICONICO_DATAから現在の状態を取得し
-    // previewNicoFuncで現在の状態をサイドバーに反映
-    previewNicoFunc($(this).text());
+        // TODO: NICONICO_DATAから現在の状態を取得し
+        // previewNicoFuncで現在の状態をサイドバーに反映
+        previewNicoFunc($(this).text());
+    }
 });
 
 
@@ -69,7 +78,14 @@ $(document).on('click', '#registed', function() {
             'comment' :  $('#day-comment').val(),
             'reflection' : $('#reflection').val()
         };
+        if (_niconicoData[dateNum]['niconico-icon'] !== -1) {
+            $('.calendar table td').eq(idxSelectedDate)
+                .css('background-image',  'url("' + $('.selected-icon').attr('src') + '")');
+        }
+        
     }
+
+    
 });
 
 
@@ -80,6 +96,43 @@ $(document).on('click', '#registed', function() {
  * */
 function previewNicoFunc(targetDate) {
     const selectedDateNicoItem = _niconicoData[targetDate];
-    $('#nico-condition img').eq(selectedDateNicoItem["niconico-icon"]).addClass('selected-icon');
+    var dayComment = '';
+    var reflection = '';
+    if (selectedDateNicoItem !== undefined) {
+        // icon情報を取得
+        var idxSelectedIcon = selectedDateNicoItem['niconico-icon'];
+        if (idxSelectedIcon === -1) {
+            $('.selected-icon').removeClass('selected-icon');
+        } else {
+            $('#nico-condition img')
+                .eq(idxSelectedIcon)
+                .addClass('selected-icon');
+        }
+        // コメント情報を取得
+        dayComment = selectedDateNicoItem['comment'];
+        if (dayComment === undefined) {
+            dayComment = '';
+        }
+        $('#day-comment').val(dayComment);
+        // １日の反省に関する情報を取得
+        reflection = selectedDateNicoItem['reflection'];
+        if (reflection === undefined) {
+            reflection = '';
+        }
+        $('#reflection').val(reflection);
+    } else {
+        // 日付に情報が設定されいなければ、そのまま初期表示する
+        $('.selected-icon').removeClass('selected-icon');
+        $('#day-comment').val(dayComment);
+        $('#reflection').val(reflection);
+    }
+}
 
+
+/**
+ * 保持しているデータをクリアする
+ *  外部呼び出し用
+ * */
+function clearData() {
+     _niconicoData = {};
 }
