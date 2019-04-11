@@ -104,9 +104,8 @@ function previewNicoFunc(targetDate) {
     if (selectedDateNicoItem !== undefined) {
         // icon情報を取得
         var idxSelectedIcon = selectedDateNicoItem['niconico-icon'];
-        if (idxSelectedIcon === -1) {
-            $('.selected-icon').removeClass('selected-icon');
-        } else {
+        $('.selected-icon').removeClass('selected-icon');
+        if (idxSelectedIcon !== -1) {
             $('#nico-condition img')
                 .eq(idxSelectedIcon)
                 .addClass('selected-icon');
