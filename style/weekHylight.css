@@ -1,0 +1,10 @@
+.week-hylight {
+    float: right;
+    width: 25%;
+    height: 330px;
+}
+
+
+.list-item li {
+    list-style: none;
+} 

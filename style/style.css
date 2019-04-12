@@ -1,6 +1,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #eff7ff;
+    margin: 15px;
 }
 
 /*ヘッダのスタイル*/
@@ -14,6 +15,11 @@ body {
     font-size: 30px;
 }
 
+#switch-calendar {
+    float: left;
+    width: 50%;
+    margin-left: 25%;
+}
 
 .month {
     text-align: center;
@@ -67,6 +73,10 @@ body {
 
 .day-area {
     text-align: center;
+}
+
+.clear-left {
+    clear: left;
 }
 /* フッターのスタイル */
 

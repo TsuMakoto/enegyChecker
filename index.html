@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>やる気チェッカー</title>
         <!-- スタイルの読み込み -->
+
         <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/weekHylight.css">
         <link rel="stylesheet" href="style/eventStyle.css">
         <link rel="stylesheet" href="style/niconicoFunc.css">
 
@@ -25,55 +27,64 @@
         </header>
 
         <!-- メイン -->
-        <div class="main">
+        <div class="main row">
             <!-- 月の切り替え機能 -->
-            <div class="month">
-                <span id="switch-prev-btn" class="prev-btn switch-btn">◀︎</span>
-                <span class="curr-month"></span>
-                <span id="switch-next-btn"class="next-btn switch-btn">▶︎</span> 
+            <div id="switch-calendar">
+                <div class="month">
+                    <span id="switch-prev-btn" class="prev-btn switch-btn">◀︎</span>
+                    <span class="curr-month"></span>
+                    <span id="switch-next-btn"class="next-btn switch-btn">▶︎</span> 
+                </div>
+
+                <!-- ニコニコ機能 月のカレンダー表示部 -->
+                <div class="calendar">
+                    <table align="center">
+                        <tbody>
+                            <tr>
+                                <td class="day-area holiday">
+                                    <div>日</div>
+                                    <div>sun</div>
+                                </td>
+                                <td class="day-area">
+                                    <div>月</div>
+                                    <div>mon</div>
+                                </td>
+                                <td class="day-area">
+                                    <div>火</div>
+                                    <div>tue</div>
+                                </td>
+                                <td class="day-area">
+                                    <div>水</div>
+                                    <div>wed</div>
+                                </td>
+
+                                <td class="day-area">
+                                    <div>木</div>
+                                    <div>thu</div>
+                                </td>
+                                <td class="day-area">
+                                    <div>金</div>
+                                    <div>fri</div>
+                                </td>
+                                <td class="day-area saturday">
+                                    <div>土</div>
+                                    <div>sat</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- ニコニコ機能 月のカレンダー表示部 -->
-            <div class="calendar">
-                <table align="center">
-                    <tbody>
-                        <tr>
-                            <td class="day-area holiday">
-                                <div>日</div>
-                                <div>Sun</div>
-                            </td>
-                            <td class="day-area">
-                                <div>月</div>
-                                <div>Mon</div>
-                            </td>
-                            <td class="day-area">
-                                <div>火</div>
-                                <div>Tue</div>
-                            </td>
-                            <td class="day-area">
-                                <div>水</div>
-                                <div>Wed</div>
-                            </td>
-                            
-                            <td class="day-area">
-                                <div>木</div>
-                                <div>Thu</div>
-                            </td>
-                            <td class="day-area">
-                                <div>金</div>
-                                <div>Fri</div>
-                            </td>
-                            <td class="day-area saturday">
-                                <div>土</div>
-                                <div>Sat</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- サイドカラムに１週間分の記録を表示 -->
+            <div class="week-hylight">
+                <div class="side-title"></div>
+                <ul class="list-item"></ul>
             </div>
 
         </div>
         
+        <div class="clear-left"></div>
         <!-- ニコニコ機能 下部に表示 -->
         <div class="niconico">
             <div id="nico-condition">
