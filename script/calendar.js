@@ -78,9 +78,9 @@ function createWeek(startDate, currMonth) {
 function getCurrMonth(currMonth) {
     // 年と月を配列へ変更
     var arrYAndM = currMonth.split(' / ');
-    var currMonthInfo = new Date(Number(arrYAndM[0]), Number(arrYAndM[1] - 1));
     
-    if (currMonthInfo !== undefined) {
+    if (arrYAndM.length !== 1) {
+        var currMonthInfo = new Date(Number(arrYAndM[0]), Number(arrYAndM[1] - 1));
         return currMonthInfo;
     } else {
         return new Date();

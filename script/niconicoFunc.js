@@ -5,10 +5,11 @@
  *      niconico-icon : アイコンの右からの番号,
  *      comment : 一言コメント,
  *      reflection : 振り返り
- *
- *      データベースへの保存用配列(にできると思われる)
+ * 
+ * @global
  * */
 var _niconicoData= {};
+
 
 /** 
  * 日付の上をマウスがホバーした時のイベントを登録
@@ -100,42 +101,46 @@ $(document).on('click', '#registed', function() {
  * */
 function previewNicoFunc(targetDate) {
     const selectedDateNicoItem = _niconicoData[targetDate];
-    var dayComment = '';
-    var reflection = '';
+    clearNicoDisplay();
     if (selectedDateNicoItem !== undefined) {
         // icon情報を取得
         var idxSelectedIcon = selectedDateNicoItem['niconico-icon'];
-        $('.selected-icon').removeClass('selected-icon');
         if (idxSelectedIcon !== -1) {
             $('#nico-condition img')
                 .eq(idxSelectedIcon)
                 .addClass('selected-icon');
         }
         // コメント情報を取得
-        dayComment = selectedDateNicoItem['comment'];
+        var dayComment = selectedDateNicoItem['comment'];
         if (dayComment === undefined) {
             dayComment = '';
         }
         $('#day-comment .comment-area').val(dayComment);
         // １日の反省に関する情報を取得
-        reflection = selectedDateNicoItem['reflection'];
+        var reflection = selectedDateNicoItem['reflection'];
         if (reflection === undefined) {
             reflection = '';
         }
         $('#reflection .comment-area').val(reflection);
-    } else {
-        // 日付に情報が設定されいなければ、そのまま初期表示する
-        $('.selected-icon').removeClass('selected-icon');
-        $('#day-comment .comment-area').val(dayComment);
-        $('#reflection .comment-area').val(reflection);
-    }
+    } 
+}
+
+/**
+ * ニコニコ機能画面の内容をクリアする。
+ * */
+function clearNicoDisplay () {
+    $('.selected-icon').removeClass('selected-icon');
+    $('#day-comment .comment-area').val('');
+    $('#reflection .comment-area').val('');
 }
 
 
 /**
  * 保持しているデータをクリアする
  *  外部呼び出し用
+ *  @public
  * */
 function clearData() {
     _niconicoData = {};
+    clearNicoDisplay();
 }
