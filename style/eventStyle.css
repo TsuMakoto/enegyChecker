@@ -1,18 +1,19 @@
 /* カレンダーがホバーされた時のスタイル */
 .hover-date {
-    background-color: #eff3f9;
-    opacity: 0.8;
+    background-color: #ff7f7f;
+    opacity: 0.5;
+    color: #eff7ff;
 }
 
 .selected-date {
-    background-color: #eff3f9;
+    background-color: #ff7f7f;
+    color: #eff7ff;
 }
 
 /* ニコニコアイコンが選択されたときに付与するクラス */
 .selected-icon {
-    background-color: #fff;
+    background-color: #eff7ff;
     border-radius: 40px;
-    padding: 10px;
 }
 
 

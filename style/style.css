@@ -1,3 +1,8 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eff7ff;
+}
+
 /*ヘッダのスタイル*/
 .title-head {
     text-align: center;
@@ -5,9 +10,6 @@
 
 /* カレンダー表示部分に関するスタイル */
 .main {
-    display: inline-block;
-    float: left;
-    margin-left: 25%;
     margin-top: 40px;
     font-size: 30px;
 }
@@ -42,7 +44,7 @@
 }
 
 .calendar {
-    text-align: right;
+    text-align: left;
 }
 
 .calendar table, td, th {
@@ -51,13 +53,20 @@
 
 .calendar td {
     background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: inherit;
+    background-size: 30px;
+    background-position: center;
+    height: 50px;
+    width: 50px;
+    vertical-align: top;
+    font-size: 15px;
 }
 
 .calendar table {
     border-collapse: collapse;
 }
 
+.day-area {
+    text-align: center;
+}
 /* フッターのスタイル */
 

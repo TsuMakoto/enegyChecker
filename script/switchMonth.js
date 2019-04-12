@@ -1,3 +1,7 @@
+/* global showCalendar */
+/* global getCurrMonth */
+
+
 /**
  * 年月からカレンダーの表示を切り替え
  *

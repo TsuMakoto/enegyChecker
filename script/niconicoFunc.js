@@ -44,7 +44,7 @@ $(document).on('click', '.calendar td', function() {
         $(this).addClass('selected-date');
 
         // _niconicoDataから現在の状態を取得し
-        // previewNicoFuncで現在の状態をサイドバーに反映
+        // previewNicoFuncで現在の状態を反映
         previewNicoFunc($(this).text());
     }
 });
@@ -75,12 +75,13 @@ $(document).on('click', '#registed', function() {
         // 値の更新
         _niconicoData[dateNum] = {
             'niconico-icon' : $('#nico-condition img').index($('.selected-icon')),
-            'comment' :  $('#day-comment').val(),
-            'reflection' : $('#reflection').val()
+            'comment' :  $('#day-comment .comment-area').val(),
+            'reflection' : $('#reflection .comment-area').val()
         };
         if (_niconicoData[dateNum]['niconico-icon'] !== -1) {
             $('.calendar table td').eq(idxSelectedDate)
-                .css('background-image',  'url("' + $('.selected-icon').attr('src') + '")');
+                .css('background-image',
+                    'url("' + $('.selected-icon').attr('src') + '")');
         }
         
         // 保存確認ダイアログを出す
@@ -115,18 +116,18 @@ function previewNicoFunc(targetDate) {
         if (dayComment === undefined) {
             dayComment = '';
         }
-        $('#day-comment').val(dayComment);
+        $('#day-comment .comment-area').val(dayComment);
         // １日の反省に関する情報を取得
         reflection = selectedDateNicoItem['reflection'];
         if (reflection === undefined) {
             reflection = '';
         }
-        $('#reflection').val(reflection);
+        $('#reflection .comment-area').val(reflection);
     } else {
         // 日付に情報が設定されいなければ、そのまま初期表示する
         $('.selected-icon').removeClass('selected-icon');
-        $('#day-comment').val(dayComment);
-        $('#reflection').val(reflection);
+        $('#day-comment .comment-area').val(dayComment);
+        $('#reflection .comment-area').val(reflection);
     }
 }
 
@@ -136,5 +137,5 @@ function previewNicoFunc(targetDate) {
  *  外部呼び出し用
  * */
 function clearData() {
-     _niconicoData = {};
+    _niconicoData = {};
 }

@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="style/eventStyle.css">
         <link rel="stylesheet" href="style/niconicoFunc.css">
 
+        <!-- Load Web font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
         <!-- script読み込み -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="script/niconicoFunc.js"></script>
@@ -35,22 +38,43 @@
                 <table align="center">
                     <tbody>
                         <tr>
-                            <td class="day-area holiday">Sun</td>
-                            <td class="day-area">Mon</td>
-                            <td class="day-area">Tue</td>
-                            <td class="day-area">Wed</td>
-                            <td class="day-area">Thu</td>
-                            <td class="day-area">Fri</td>
-                            <td class="day-area saturday">Sat</td>
+                            <td class="day-area holiday">
+                                <div>日</div>
+                                <div>Sun</div>
+                            </td>
+                            <td class="day-area">
+                                <div>月</div>
+                                <div>Mon</div>
+                            </td>
+                            <td class="day-area">
+                                <div>火</div>
+                                <div>Tue</div>
+                            </td>
+                            <td class="day-area">
+                                <div>水</div>
+                                <div>Wed</div>
+                            </td>
+                            
+                            <td class="day-area">
+                                <div>木</div>
+                                <div>Thu</div>
+                            </td>
+                            <td class="day-area">
+                                <div>金</div>
+                                <div>Fri</div>
+                            </td>
+                            <td class="day-area saturday">
+                                <div>土</div>
+                                <div>Sat</div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="weekHylight"></div>
         </div>
         
-        <!-- ニコニコ機能 サイドカラムで表示 -->
+        <!-- ニコニコ機能 下部に表示 -->
         <div class="niconico">
             <div id="nico-condition">
                 <div class="side-title">今日のやる気を選択する</div>
@@ -62,12 +86,12 @@
                     <img src="img/4.png">
                 </div>
                 <div class="nico-item">
-                    <div class="side-title">意気込みは？</div>
-                    <textarea id="day-comment" class="comment-area"></textarea>
+                    <div id="day-comment" class="side-title">意気込みは？</div>
+                    <textarea class="comment-area"></textarea>
                 </div>
                 <div class="nico-item">
-                    <div class="side-title">今日の反省</div>
-                    <textarea id="reflection" class="comment-area"></textarea>
+                    <div id="reflection" class="side-title">今日の反省</div>
+                    <textarea class="comment-area"></textarea>
                 </div>
                 <div id="decision">
                     <div id="registed" class="nico-registed-btn">保存する</div>
